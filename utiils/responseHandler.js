@@ -1,4 +1,4 @@
-const headers = require('./config/headers')
+const headers = require('../config/headers')
 
 const successHandler = async ({
   res,
