@@ -16,6 +16,11 @@ const successHandler = async ({
   )
 }
 
+const errorsHandler = (errors) =>
+  errors.reduce((acc, cur) => {
+    return (acc = [...acc, cur.message])
+  }, [])
+
 const errorHandler = async ({
   res,
   statusCode = '400',
@@ -27,7 +32,10 @@ const errorHandler = async ({
     JSON.stringify({
       status: 'Error',
       message,
-      errors: [],
+      errors:
+        typeof errors === 'string'
+          ? errors
+          : errorsHandler([...Object.values(errors)]),
     })
   )
 }
