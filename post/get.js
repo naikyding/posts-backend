@@ -5,7 +5,9 @@ const { successHandler, errorHandler } = require('../utils/responseHandler')
 const getListHandler = async ({ sort, q }) => {
   try {
     const list = sort
-      ? await Post.find({ content: new RegExp(q) }).sort({
+      ? await Post.find({
+          $or: [{ content: new RegExp(q) }, { name: new RegExp(q) }],
+        }).sort({
           createdAt: sort === 'old' ? 1 : -1,
         })
       : await Post.find()
