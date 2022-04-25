@@ -1,5 +1,5 @@
 const Post = require('../model/post')
-const { successHandler, errorHandler } = require('../utiils/responseHandler')
+const { successHandler, errorHandler } = require('../utils/responseHandler')
 
 const getListHandler = async () => {
   try {
