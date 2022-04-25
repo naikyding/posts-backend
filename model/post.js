@@ -12,7 +12,7 @@ const postSchema = new Schema(
       default: '這是頭像 url',
     },
     content: {
-      type: 'String',
+      type: String,
       required: [true, '請輸入貼文內容'],
     },
     image: {
