@@ -1,11 +1,12 @@
 const headers = require('./config/headers')
 const { getPostList } = require('./post/get')
+const postItem = require('./post/post')
 
 const requestListener = async (req, res) => {
   const { url, method } = req
   if (url === '/posts' && method === 'GET') getPostList(res)
-  else if (url === '/posts' && method === 'POST') {
-  } else if (url === '/posts' && method === 'DELETE') {
+  else if (url === '/posts' && method === 'POST') postItem(req, res)
+  else if (url === '/posts' && method === 'DELETE') {
   } else if (url.startsWith('/posts/') && method === 'DELETE') {
   } else if (url.startsWith('/posts/') && method === 'PATCH') {
   } else if (method === 'OPTIONS') {
