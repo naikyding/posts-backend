@@ -19,13 +19,13 @@ const postSchema = new Schema(
       type: String,
       required: false,
     },
-    createdAt: {
-      type: Date,
-      default: Date.now(),
-    },
   },
   {
     versionKey: false,
+    timestamps: {
+      createdAt: true,
+      updatedAt: false,
+    },
   }
 )
 
