@@ -9,7 +9,7 @@ const postSchema = new Schema(
     },
     avatar: {
       type: String,
-      default: '這是頭像 url',
+      required: false,
     },
     content: {
       type: String,
@@ -17,7 +17,7 @@ const postSchema = new Schema(
     },
     image: {
       type: String,
-      default: '這是圖片 url',
+      required: false,
     },
     createdAt: {
       type: Date,
