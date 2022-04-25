@@ -14,7 +14,7 @@ const postItem = async (req, res) => {
   try {
     const { name, avatar, image, content } = await bufferHandler(req)
     await Post.create({ name, avatar, image, content })
-    const list = await getListHandler()
+    const list = await getListHandler({})
     successHandler({ res, data: list, statusCode: 201 })
   } catch ({ errors }) {
     errorHandler({ res, errors: errors || '資料錯誤' })
