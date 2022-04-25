@@ -4,7 +4,7 @@ const postItem = require('./post/post')
 
 const requestListener = async (req, res) => {
   const { url, method } = req
-  if (url === '/posts' && method === 'GET') getPostList(res)
+  if (url.startsWith('/posts') && method === 'GET') getPostList(req, res)
   else if (url === '/posts' && method === 'POST') postItem(req, res)
   else if (url === '/posts' && method === 'DELETE') {
   } else if (url.startsWith('/posts/') && method === 'DELETE') {
