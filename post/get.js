@@ -6,7 +6,7 @@ const getListHandler = async ({ sort, q }) => {
   try {
     const list = sort
       ? await Post.find({ content: new RegExp(q) }).sort({
-          createdAt: sort === 'new' ? 1 : -1,
+          createdAt: sort === 'old' ? 1 : -1,
         })
       : await Post.find()
 
